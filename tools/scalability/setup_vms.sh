@@ -11,12 +11,18 @@ set -xe
 vm_id=1
 ips=$(cat vm_ip_list.txt | tr '\n' ' ')
 
+for ens3ip in $ips; do
+    ip=$(ssh ubuntu@$ens3ip -- "ip a | grep ens3 | cut -d ' ' -f6 | awk 'NR==2{print $1}' | cut -d "/" -f 1")
+    echo $ip>>ens3_ip_list.txt
+done
 
 for ip in $ips;do
+	scp vm_ip_list.txt ens3_ip_list.txt ubuntu@$ip:/home/ubuntu/
 	ssh ubuntu@$ip -- " rm -rf metal3-dev-env/ && \
  	git clone https://github.com/Nordix/metal3-dev-env.git && \
- 	cd metal3-dev-env/ && \
- 	git checkout ironic-scalability-host1 && \
+ 	mv vm_ip_list.txt ens3_ip_list.txt metal3-dev-env/ && \
+	cd metal3-dev-env/ && \
+ 	git checkout test-scalability && \
  	echo "export IMAGE_OS=Ubuntu" >> /home/ubuntu/metal3-dev-env/config_example.sh && \
 	echo "export CONTAINER_RUNTIME=docker" >> /home/ubuntu/metal3-dev-env/config_example.sh && \
  	echo "export EPHEMERAL_CLUSTER=kind" >> /home/ubuntu/metal3-dev-env/config_example.sh && \
@@ -44,3 +50,5 @@ done
 
 ssh ubuntu@$master_vm_ip -- "kubectl apply -n metal3 -f /home/ubuntu/bm_crs/"
 ssh ubuntu@$master_vm_ip -- 'cd metal3-dev-env/ && bash -c /home/$USER/metal3-dev-env/provision_image.sh'
+
+rm ens3_ip_list.txt 2> /dev/null
