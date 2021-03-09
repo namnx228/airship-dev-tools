@@ -13,6 +13,13 @@
  "prConcurrentLimit": 10,
  "rangeStrategy": "bump",
  "renovateFork": true,
- "includeForks": true
+ "includeForks": true,
+ "regexManagers": [
+    {
+      "fileMatch": ["target_cluster_container_images.sh$"],
+      "matchStrings": ["docker.io/calico/cni:(?<currentValue>.*?)"],
+      "depName": "calico/cni",
+      "datasource": "docker"
+    }
+  ]
 }
-
