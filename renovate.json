@@ -17,7 +17,7 @@
  "regexManagers": [
     {
       "fileMatch": ["target_cluster_container_images.sh$"],
-      "matchStrings": ["export CALICO_CNI_IMG=\"${CALICO_CNI_IMG:-\"docker.io/calico/cni:v3.17.3\"}\""],
+      "matchStrings": ["export CALICO_CNI_IMG=\"${CALICO_CNI_IMG:-\"docker.io/calico/cni:v(?<currentValue>.*?)\"}\""],
       "depNameTemplate": "calico/cni",
       "datasourceTemplate": "docker"
     }
