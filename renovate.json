@@ -7,10 +7,6 @@
      "depTypeList": ["devDependencies"],
      "updateTypes": ["minor"],
      "automerge": false
-   },
-   {
-      "matchPackagePatterns": ["docker.io/calico/cni"],
-      "matchCurrentVersion": "/^v\\./"
    }
  ],
  "prHourlyLimit": 5,
@@ -21,7 +17,7 @@
  "regexManagers": [
     {
       "fileMatch": ["target_cluster_container_images.sh$"],
-      "matchStrings": ["docker.io/calico/cni:(?<currentValue>.*?)"],
+      "matchStrings": ["docker.io/calico/cni:v(?<currentValue>.*?)"],
       "depNameTemplate": "calico/cni",
       "datasourceTemplate": "docker"
     }
