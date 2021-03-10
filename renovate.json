@@ -19,6 +19,7 @@
       "fileMatch": ["target_cluster_container_images.sh$"],
       "matchStrings": ["docker.io/calico/cni:(?<currentValue>.*?)"],
       "depNameTemplate": "calico/cni",
+      "versioning": "docker",
       "extractVersion": "^v(?<version>.+)$",
       "datasourceTemplate": "docker"
     }
