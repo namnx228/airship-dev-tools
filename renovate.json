@@ -7,6 +7,10 @@
      "depTypeList": ["devDependencies"],
      "updateTypes": ["minor"],
      "automerge": false
+   },
+   {
+      "matchPackagePatterns": ["docker.io/calico/cni"],
+      "matchCurrentVersion": "/^v\\./"
    }
  ],
  "prHourlyLimit": 5,
