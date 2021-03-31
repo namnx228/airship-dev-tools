@@ -16,21 +16,9 @@
  "includeForks": true,
  "regexManagers": [
     {
-      "fileMatch": [".*$"],
+      "fileMatch": ["target_cluster_container_images.sh$"],
       "matchStrings": ["docker.io/calico/cni:(?<currentValue>v.*?)\"}"],
       "depNameTemplate": "calico/cni",
-      "datasourceTemplate": "docker"
-    },
-    {
-      "fileMatch": [".*$"],
-      "matchStrings": ["docker.io/calico/pod2daemon-flexvol:(?<currentValue>v.*?)\"}"],
-      "depNameTemplate": "calico/pod2daemon-flexvol",
-      "datasourceTemplate": "docker"
-    },
-    {
-      "fileMatch": [".*$"],
-      "matchStrings": ["docker.io/calico/kube-controllers:(?<currentValue>v.*?)\"}"],
-      "depNameTemplate": "calico/kube-controllers",
       "datasourceTemplate": "docker"
     }
   ]
