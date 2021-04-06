@@ -37,7 +37,8 @@
       "fileMatch": ["^ci/.*$"],
       "matchStrings": ["KUBERNETES_VERSION:-\"(?<currentValue>v.*?)\"}"],
       "depNameTemplate": "kubernetes/kubernetes",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-tags",
+      "extractVersion": "^(?<version>v\\d+\\.\\d+)"
     }
   ]
 }
