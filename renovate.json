@@ -32,6 +32,12 @@
       "matchStrings": ["docker.io/calico/kube-controllers:(?<currentValue>v.*?)\"}"],
       "depNameTemplate": "calico/kube-controllers",
       "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["^ci/.*$"],
+      "matchStrings": ["KUBERNETES_VERSION:-\"(?<currentValue>v.*?)\"}"],
+      "depNameTemplate": "kubernetes/kubernetes",
+      "datasourceTemplate": "github-tags"
     }
   ]
 }
