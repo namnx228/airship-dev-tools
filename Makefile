@@ -92,7 +92,7 @@ build-go-unittest: ## Build Docker Image for go unit test
 push-go-unittest: ## Push Docker Image for go unit test to nordix registry
 	docker push ${image_registry}/airship/${NAME}-gotest-unit:${gotest_unit_img_ver}
 
-SHELLCHECK_VERSION := "v0.7.0"
+SHELLCHECK_VERSION := "v0.7.1"
 SHELLCHECK_IMAGE := "koalaman/shellcheck-alpine:${SHELLCHECK_VERSION}"
 .PHONY: lint-shell
 lint-shell: ## Lint shell scripts (ex: make lint-shell or make lint-shell lint_folder=abspath)
