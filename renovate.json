@@ -39,6 +39,7 @@
       "depNameTemplate": "kubernetes/kubernetes",
       "datasourceTemplate": "github-tags"
     },
+    {
       "fileMatch": ["Makefile$"],
       "matchStrings": ["SHELLCHECK_VERSION := \"(?<currentValue>v.*?)\""],
       "depNameTemplate": "koalaman/shellcheck-alpine",
