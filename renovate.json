@@ -47,5 +47,7 @@
     }
   ],
   "assigneesFromCodeOwners": true,
-  "assigneesSampleSize": 1
+  "assigneesSampleSize": 1,
+  "reviewersFromCodeOwners": true,
+  "reviewersSampleSize": 1
 }
