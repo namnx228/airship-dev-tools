@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:26.04
 
 # Install the minimum dependencies
 # (software-properties-common for add-apt-repository)
